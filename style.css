@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_box {
+  width: 20rem;
+  height: 40rem;
+  border: 1px outset #696d7238;
+  background-clip: padding-box;
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: white;
+}
+
+.main_box-icon,
+.main_box-text {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main_box-icon {
+  border-bottom: 2px solid #696d7238;
+}
+a {
+  color: red;
+  text-align: center;
+  font-size: 5.5rem;
+  transition: color 0.2s ease-in;
+}
+
+a:hover {
+  color: rgba(255, 0, 0, 0.562);
+}
+
+i {
+  margin: 2.2rem;
+}
+
+.text-highlight {
+  color: red;
+}
+
+p {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+a[data-tool-tip] {
+  position: relative;
+}
+
+a[data-tool-tip]::after {
+  content: attr(data-tool-tip);
+  position: absolute;
+  width: 20rem;
+  height: 5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  border: 1px outset #696d7238;
+  background-clip: padding-box;
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.4);
+  border-top: 3px solid red;
+  font-size: 2rem;
+  text-transform: uppercase;
+  top: 20%;
+  left: -44%;
+  white-space: nowrap;
+  text-align: center;
+  transform: scale(0);
+  transition: all ease-out 0.3s;
+}
+
+a[data-tool-tip]:hover::after {
+  transform: scale(1);
+  top: -50%;
+}
+
+.text-tooltip[data-tool-tip] {
+  position: relative;
+  cursor: pointer;
+}
+
+.text-tooltip[data-tool-tip]::after {
+  content: attr(data-tool-tip);
+  position: absolute;
+  height: 5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  border: 1px outset #696d7238;
+  background-clip: padding-box;
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.4);
+  font-size: 2rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  transform: scale(0);
+  transition: all ease-out 0.3s;
+}
+
+.text-tooltip_right[data-tool-tip]::after {
+  width: 3rem;
+  top: 0;
+  right: 30%;
+}
+
+.text-tooltip_right[data-tool-tip]:hover::after {
+  transform: scale(1);
+  top: -50%;
+  right: -60%;
+}
+
+.text-tooltip_left[data-tool-tip]::after {
+  width: 3rem;
+  top: 0;
+  left: 30%;
+}
+
+.text-tooltip_left[data-tool-tip]:hover::after {
+  transform: scale(1);
+  top: -50%;
+  left: -120%;
+}
+
+.text-tooltip_bottom[data-tool-tip]::after {
+  width: 20rem;
+  bottom: -50%;
+  left: -50%;
+}
+
+.text-tooltip_bottom[data-tool-tip]:hover::after {
+  transform: scale(1);
+  background: white;
+  bottom: -190%;
+  left: -47%;
+}
